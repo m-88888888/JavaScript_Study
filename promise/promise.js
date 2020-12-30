@@ -6,5 +6,19 @@ const callFunction = () => {
   asynFunction(100, (value) => console.log(value))
 }
 
-callFunction()
+// callFunction()
 
+const callFunctionHell = () => {
+  asynFunction(100, (value) => { 
+      console.log(value)
+      asynFunction(value, (value) => {
+        console.log(value)
+        asynFunction(value, (value) => {
+          console.log(value)
+        })
+      })
+    }
+  )
+}
+
+callFunctionHell()
