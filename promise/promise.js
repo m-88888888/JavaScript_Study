@@ -59,4 +59,28 @@ const promiseFunction = () => {
     })
 }
 
-promiseFunction()
+// promiseFunction()
+
+const asyncPromiseErrorFunction = (data) => {
+  return new Promise((okCallback, ngCallback) => {
+    setTimeout(() => {
+      Math.random() < 0.30
+      ? ngCallback(new Error('ERROR!'))
+      : okCallback(data * 2)
+      , Math.random() * 1000
+    })
+  })
+}
+
+const rejectPromise = () => {
+  asyncPromiseErrorFunction(100)
+  // then()の第一引数に成功時の処理
+  // 第二引数に失敗時の処理
+  .then(
+    (data) => console.log(data), // 成功時の処理
+    (e) => console.log(e) //失敗時の処理
+  )
+}
+
+rejectPromise()
+
