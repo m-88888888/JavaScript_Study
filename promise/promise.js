@@ -82,5 +82,16 @@ const rejectPromise = () => {
   )
 }
 
-rejectPromise()
+// rejectPromise()
 
+const async_await_sample = async () => {
+  var value = 100
+  value = await asyncPromiseFunction(value) 
+  console.log(value)
+  value = await asyncPromiseFunction(value) 
+  console.log(value)
+  value = await asyncPromiseFunction(value) 
+  console.log(value)
+}
+
+async_await_sample()
